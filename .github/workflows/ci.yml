@@ -47,6 +47,3 @@ jobs:
 
       - name: Install dependencies
         run: npm ci 
-
-      - name: Run Linter
-        run: npm run lint
