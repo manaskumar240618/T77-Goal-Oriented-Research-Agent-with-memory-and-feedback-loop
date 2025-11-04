@@ -1,0 +1,8 @@
+Agentic AI refers to systems that can autonomously pursue goals. 
+These agents are not just reactive; they can plan, reason, and adapt their strategies.
+A key component of an agentic system is its ability to use tools and memory.
+The memory allows the agent to learn from past interactions and feedback.
+A RAG (Retrieval-Augmented Generation) model is a common way to provide memory,
+allowing the agent to pull in relevant facts from a knowledge base.
+The feedback loop is crucial for improvement, letting the agent know
+if its actions were successful or not.
