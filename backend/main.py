@@ -1,4 +1,6 @@
 # backend/main.py
+import json
+import aiofiles
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -130,5 +132,87 @@ def read_root():
 
 # --- RUN THE APP ---
 if __name__ == "__main__":
+    print("Starting Uvicorn server...")
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+
+# backend/main.py
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+import uvicorn
+
+from langchain_community.vectorstores import Chroma
+# ... (all your other langchain imports) ...
+
+# 1. Add your new imports here (from point 2)
+import json
+import aiofiles 
+
+
+# ... (all the code for "--- CONFIGURATION ---" and "--- SETUP ---") ...
+# ... (this code sets up your RAG_CHAIN) ...
+
+
+# --- API DEFINITION ---
+
+app = FastAPI()
+
+# ... (all the code for app.add_middleware(CORS)...) ...
+
+
+# Define the request data model (what the frontend sends)
+class ChatRequest(BaseModel):
+    query: str
+
+
+# 2. Add the NEW FeedbackRequest model here (this is point 3)
+class FeedbackRequest(BaseModel):
+    query: str
+    response: str
+    feedback: str # "positive" or "negative"
+
+
+# This is your existing chat endpoint
+@app.post("/api/v1/chat")
+def post_chat(request: ChatRequest):
+    # ... (all the code for your chat endpoint) ...
+    # ... (this function is NOT changed) ...
+    pass # Just a placeholder so Python is happy
+
+
+# 3. Add the NEW feedback endpoint here (this is point 4)
+@app.post("/api/v1/feedback")
+async def post_feedback(request: FeedbackRequest):
+    print(f"Received feedback: {request.feedback}")
+    
+    feedback_log_file = "feedback_log.jsonl"
+    
+    log_entry = {
+        "query": request.query,
+        "response": request.response,
+        "feedback": request.feedback
+    }
+    
+    try:
+        async with aiofiles.open(feedback_log_file, mode="a") as f:
+            await f.write(json.dumps(log_entry) + "\n")
+            
+        print(f"Feedback logged to {feedback_log_file}")
+        return {"status": "success", "message": "Feedback received"}
+    
+    except Exception as e:
+        print(f"Error logging feedback: {e}")
+        return {"status": "error", "message": "Could not log feedback"}
+
+
+# This is your existing root endpoint
+@app.get("/")
+def read_root():
+    return {"message": "AI Backend is running!"}
+
+
+# --- RUN THE APP ---
+if __name__ == "__main__":
+    # ... (this code is not changed) ...
     print("Starting Uvicorn server...")
     uvicorn.run(app, host="127.0.0.1", port=8000)
