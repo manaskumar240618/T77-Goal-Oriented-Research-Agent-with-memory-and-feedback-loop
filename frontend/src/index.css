@@ -5,9 +5,9 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Modern, clean font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121217;
-  color: #e0e0e0;
+  background-color: #121217; /* Dark background from the image */
+  color: #e0e0e0; /* Light text for dark mode */
 }

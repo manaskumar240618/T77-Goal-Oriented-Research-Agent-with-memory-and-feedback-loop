@@ -82,12 +82,23 @@
   color: #6633ff;
 }
 
+/* Bottom section of sidebar */
 .sidebar-bottom {
   margin-top: 50px;
 }
 
 .sidebar-bottom li {
   margin-bottom: 5px;
+}
+
+.sidebar-menu button:disabled {
+  color: #666;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.sidebar-menu button:disabled svg {
+  color: #666;
 }
 
 /* --- Main Content Area Styling --- */
@@ -98,6 +109,7 @@
   background-color: #121217;
 }
 
+/* Top Search Bar */
 .top-search-bar {
   background-color: #1a1a20;
   padding: 15px 30px;
@@ -194,6 +206,7 @@
 .initial-chat-input-wrapper svg:hover {
     color: #6633ff;
 }
+
 
 /* Chat Box and Input (when conversation has started) */
 .chat-container {
@@ -307,4 +320,318 @@
   font-size: 0.8rem;
   color: #999;
   margin-left: 8px;
+}
+
+/* --- ADD THIS CODE TO THE END OF App.css --- */
+
+/* =================================== */
+/* --- LIGHT MODE STYLES --- */
+/* =================================== */
+
+/* This is the main "on" switch */
+.App.light-mode {
+  background-color: #f4f4f8; /* Light grey background */
+  color: #1a1a20; /* Dark text */
+}
+
+/* Light Mode Sidebar */
+.light-mode .sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+}
+.light-mode .sidebar-header h2 {
+  color: #1a1a20;
+}
+.light-mode .sidebar-menu button {
+  color: #1a1a20;
+}
+.light-mode .sidebar-menu button:hover {
+  background-color: #f0f0f0;
+}
+.light-mode .sidebar-menu button:disabled {
+  color: #cccccc;
+  background-color: transparent;
+}
+.light-mode .sidebar-menu button:disabled svg {
+  color: #cccccc;
+}
+
+/* Light Mode Main Content */
+.light-mode .main-content {
+  background-color: #f4f4f8;
+}
+
+/* Light Mode Top Bar */
+.light-mode .top-search-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.light-mode .top-search-bar .search-input-wrapper {
+  background-color: #f0f0f0;
+}
+.light-mode .top-search-bar .search-input-wrapper input {
+  color: #1a1a20;
+}
+.light-mode .profile-icon {
+  border-color: #ccc;
+  color: #888;
+}
+
+/* Light Mode Welcome Screen */
+.light-mode .welcome-screen h1 {
+  color: #1a1a20;
+}
+.light-mode .initial-chat-input-wrapper input {
+  background-color: #ffffff;
+  border-color: #ccc;
+  color: #1a1a20;
+}
+.light-mode .initial-chat-input-wrapper input:focus {
+  border-color: #6633ff;
+}
+
+/* Light Mode Chat Bubbles */
+.light-mode .message-bubble.ai {
+  background-color: #e9e9eb; /* Light grey for AI */
+  color: #1a1a20;
+}
+.light-mode .message-bubble.ai i {
+  color: #555;
+}
+
+/* Light Mode Chat Input Area */
+.light-mode .chat-input-area {
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+.light-mode .chat-input-area input {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #1a1a20;
+}
+
+/* Light Mode Feedback & Sources */
+.light-mode .feedback-buttons button {
+  background: #e0e0e0;
+  color: #333;
+}
+.light-mode .feedback-buttons button:hover {
+  background: #ccc;
+}
+.light-mode .feedback-buttons p i {
+  color: #888;
+}
+.light-mode .sources-container {
+  border-top: 1px solid #dcdcdc;
+}
+.light-mode .sources-container strong {
+  color: #555;
+}
+.light-mode .source-item {
+  background-color: #f0f0f0;
+}
+.light-mode .source-item p {
+  color: #444;
+}
+.light-mode .source-item span {
+  color: #777;
+}
+
+/* =================================== */
+/* --- SETTINGS MODAL STYLES --- */
+/* =================================== */
+
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-modal {
+  background-color: #1a1a20;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid #2a2a30;
+  color: #e0e0e0;
+}
+
+/* Light mode styles for the modal */
+.light-mode .settings-modal {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #1a1a20;
+}
+
+.settings-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.settings-modal-header h2 {
+  margin: 0;
+}
+
+.settings-modal-header .close-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.light-mode .settings-modal-header .close-btn {
+  color: #888;
+}
+
+.settings-modal-content p {
+  line-height: 1.6;
+}
+/* --- ADD THIS CODE TO THE END OF App.css --- */
+
+/* =================================== */
+/* --- NEW SETTINGS MODAL CONTENT --- */
+/* =================================== */
+
+.settings-modal-content h3 {
+  border-bottom: 1px solid #2a2a30;
+  padding-bottom: 5px;
+  color: #6633ff;
+  margin-top: 25px;
+}
+
+.light-mode .settings-modal-content h3 {
+  border-bottom-color: #e0e0e0;
+}
+
+.settings-modal-content .setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.settings-modal-content .setting-row span {
+  font-size: 0.95rem;
+}
+
+/* Basic Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  transition: .4s;
+  border-radius: 28px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #6633ff;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Modal Buttons */
+.modal-btn {
+  background-color: #2a2a30;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+.modal-btn:hover {
+  background-color: #3a3a40;
+}
+.modal-btn.danger {
+  border-color: #ff3366;
+  color: #ff3366;
+}
+.modal-btn.danger:hover {
+  background-color: #ff3366;
+  color: white;
+}
+
+.light-mode .modal-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border-color: #ccc;
+}
+.light-mode .modal-btn:hover {
+  background-color: #e0e0e0;
+}
+.light-mode .modal-btn.danger {
+  border-color: #cc0033;
+  color: #cc0033;
+}
+.light-mode .modal-btn.danger:hover {
+  background-color: #cc0033;
+  color: white;
+}
+
+/* =================================== */
+/* --- NEW HISTORY DELETE BUTTON --- */
+/* =================================== */
+.history-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.history-item button.history-load-btn {
+  flex: 1; /* Button takes up most space */
+  padding-right: 5px; /* Give space for delete btn */
+}
+
+.history-delete-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+.history-delete-btn:hover {
+  background-color: #3a3a40;
+  color: #ff3366;
+}
+.light-mode .history-delete-btn:hover {
+  background-color: #e0e0e0;
 }
