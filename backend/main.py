@@ -49,14 +49,15 @@ def initialize_rag_chain():
         retriever = vector_store.as_retriever()
         print("Vector store loaded successfully.")
 
-        # 3. Define Prompts (Isolation Logic Included)
+        # 3. Define Prompts (This contains all your fixes)
         answer_prompt_template = """
         You are a strictly factual research assistant. 
         
-        1. **PRIORITIZE** providing a detailed and comprehensive answer, unless a word count or length constraint is explicitly given.
-        2. **STRICTLY FOLLOW** any constraints in the question (e.g., word count).
-        3. Use the following CONTEXT (and ONLY the context) to formulate your answer.
-        4. Do NOT be conversational, make guesses, or add extra information.
+        1. **STRICTLY** base your answer ONLY on the exact topic requested in the question. While providing a detailed answer, **DO NOT** include definitions or explanations for related terms that were not explicitly asked for (e.g., if asked for 'Deep Learning', do not define 'Neural Networks' unless prompted).
+        2. **PRIORITIZE** providing a detailed and comprehensive answer, unless a word count or length constraint is explicitly given.
+        3. **STRICTLY FOLLOW** any constraints in the question (e.g., word count).
+        4. Use the following CONTEXT (and ONLY the context) to formulate your answer.
+        5. If the user's question is a social greeting (like 'thank you', 'hello', 'goodbye') or a non-technical phrase, respond politely and briefly (e.g., 'Thank you for your question. This topic seems to be outside my current knowledge base. I’m still learning, so I may not be able to provide an accurate answer at the moment.').
         
         Context: {context}
         
@@ -68,9 +69,7 @@ def initialize_rag_chain():
             template=answer_prompt_template, input_variables=["context", "question"]
         )
         
-        # --- CRITICAL FIX FOR ISOLATION ---
-        # Only use history if the new question explicitly refers to the last topic (e.g., "explain it", "what was my last question").
-        # If the question is a new topic (e.g., "what is LLM?"), ignore the history.
+        # --- CRITICAL FIX FOR ISOLATION (Prevents confusion between questions) ---
         condense_question_template = """
         Given the following conversation and a follow-up question, determine if the 
         follow-up question requires the context of the chat history to be understood.
