@@ -1,8 +1,444 @@
-Agentic AI refers to systems that can autonomously pursue goals. 
-These agents are not just reactive; they can plan, reason, and adapt their strategies.
-A key component of an agentic system is its ability to use tools and memory.
-The memory allows the agent to learn from past interactions and feedback.
-A RAG (Retrieval-Augmented Generation) model is a common way to provide memory,
-allowing the agent to pull in relevant facts from a knowledge base.
-The feedback loop is crucial for improvement, letting the agent know
-if its actions were successful or not.
+# Comprehensive Technology Knowledge Base
+
+## 1. Artificial Intelligence (AI) Basics
+
+Artificial Intelligence refers to systems designed to perform tasks that require cognitive functions such as perception, learning, reasoning, and decision‑making.
+
+### 1.1 Scope of AI
+
+AI systems aim to replicate or augment human intelligence in:
+
+* **Perception:** Recognizing images, audio, sensor inputs.
+* **Language Understanding:** Processing natural language.
+* **Reasoning:** Making logical decisions.
+* **Learning:** Improving performance with experience.
+
+### 1.2 Categories of AI
+
+* **ANI (Artificial Narrow Intelligence):** Performs a single specialized task (e.g., face recognition, speech transcription).
+* **AGI (Artificial General Intelligence):** Capable of human‑level reasoning and adaptability across tasks.
+* **ASI (Artificial Super Intelligence):** Exceeds human intelligence across all domains.
+
+Current systems are **ANI**.
+
+### 1.3 Core Components of an AI System
+
+1. **Data Input:** Sensor, text, audio, images.
+2. **Model/Inference Engine:** Applies learned patterns.
+3. **Output/Action:** Prediction, classification, control signal.
+
+Example workflow:
+
+```
+Input Data → Preprocessing → Model → Output
+```
+
+### 1.4 Knowledge Representation Techniques
+
+* **Rules:** If-then logical statements.
+* **Graphs:** Entities and relationships (e.g., Knowledge Graphs).
+* **Embeddings:** Numeric vector representation of concepts.
+
+### 1.5 Reasoning Techniques
+
+* **Deterministic Reasoning:** Fixed outcomes based on rules.
+* **Probabilistic Reasoning:** Decision-making under uncertainty.
+
+### 1.6 Search-Based Problem Solving (Used in Planning/Optimization)
+
+* **Uninformed Search:** Explores without direction (e.g., BFS, DFS).
+* **Heuristic Search:** Uses guidance to reach goal faster (e.g., A* algorithm).
+
+### 1.7 Evaluation Metrics
+
+* **Accuracy:** Correct predictions/total predictions.
+* **Precision & Recall:** Used when class imbalance exists.
+* **Latency:** Time required for decision/inference.
+
+### 1.8 Real‑World System Example
+
+Autonomous vehicle AI system:
+
+* Sensors capture environment.
+* Neural networks detect objects.
+* Planning module decides driving action.
+* Control module executes steering and speed.
+
+---
+
+AI refers to the development of computer systems capable of performing tasks that typically require human intelligence. This includes reasoning, problem‑solving, learning, perception, and language understanding.
+
+**Key Concepts:**
+
+* **Intelligence:** Ability to learn and apply knowledge.
+* **Automation:** Machines performing tasks with minimal human intervention.
+* **Decision-Making:** AI systems evaluate data and choose an action.
+
+**Example:** Virtual assistants like Siri and Google Assistant understand and respond to voice commands.
+
+**Applications:** Healthcare diagnosis, autonomous vehicles, natural language processing, robotics.
+
+---
+
+## 2. Machine Learning Types
+
+Machine Learning enables systems to learn patterns from data and improve performance over time without being explicitly programmed.
+
+### 2.1 Supervised Learning
+
+Supervised learning uses **labeled data** where both input and correct output are known.
+
+**Workflow:**
+
+```
+Training Data (X, y) → Model → Learn Patterns → Predict y' for new X
+```
+
+**Common Algorithms:**
+
+* **Linear Regression:** Predicts continuous values.
+* **Logistic Regression:** Binary classification.
+* **Decision Tree:** Tree-structured decision rules.
+* **Random Forest:** Multiple trees combined for robust prediction.
+* **Support Vector Machine (SVM):** Maximizes margin between classes.
+
+**Example:**
+Email classification as *spam* or *not spam*.
+
+---
+
+### 2.2 Unsupervised Learning
+
+Unsupervised learning uses **unlabeled data** to discover hidden patterns.
+
+**Key Techniques:**
+
+* **Clustering:** Grouping similar items.
+
+  * Example: Customer segmentation in marketing.
+* **Dimensionality Reduction:** Compressing data while preserving structure.
+
+  * Example: PCA to reduce dataset size.
+* **Anomaly Detection:** Identifying abnormal behavior.
+
+  * Example: Fraud detection in banking.
+
+---
+
+### 2.3 Reinforcement Learning
+
+Reinforcement Learning focuses on learning by interacting with an environment and receiving **rewards or penalties**.
+
+**Components:**
+
+* **Agent:** Learner.
+* **Environment:** World in which the agent acts.
+* **Policy:** Strategy for choosing actions.
+* **Reward:** Feedback signal.
+
+**Learning Loop:**
+
+```
+State → Action → Reward → New State → Update Policy
+```
+
+**Example:**
+Robot learning to walk by trial and feedback.
+
+---
+
+### 2.4 Choosing ML Type Based on Task
+
+| Problem Type               | Data Available           | Recommended Method     |
+| -------------------------- | ------------------------ | ---------------------- |
+| Classification             | Labeled data             | Supervised Learning    |
+| Grouping users / patterns  | Unlabeled data           | Unsupervised Learning  |
+| Control or game strategies | Rewards/interaction logs | Reinforcement Learning |
+
+---
+
+### 2.5 Common Evaluation Metrics
+
+* **Accuracy:** Correct predictions ratio.
+* **Precision:** True Positive quality.
+* **Recall:** Sensitivity to positive class.
+* **F1 Score:** Balance between precision and recall.
+* **AUC-ROC:** Performance across classification thresholds.
+* **Reward Curve:** Used in RL to measure agent improvement over time.
+
+---
+
+Machine Learning is a subset of AI where systems learn from data patterns and improve over time.
+
+### a) Supervised Learning
+
+Models learn using labeled data (input and correct output).
+
+* **Examples:** Spam detection, sentiment analysis.
+* **Algorithms:** Linear Regression, SVM, Random Forest.
+
+### b) Unsupervised Learning
+
+Models find patterns in unlabeled data.
+
+* **Examples:** Customer segmentation, anomaly detection.
+* **Algorithms:** K‑Means, PCA, Hierarchical Clustering.
+
+### c) Reinforcement Learning
+
+Systems learn by interacting with an environment and receiving rewards or penalties.
+
+* **Examples:** Game AI, robot navigation.
+* **Key Idea:** Trial‑and‑error learning.
+
+---
+
+## 3. Neural Networks & Deep Learning
+
+Neural Networks are inspired by the human brain. They consist of neurons arranged in layers.
+
+**Layer Types:** Input Layer → Hidden Layers → Output Layer
+
+**Deep Learning:** Neural networks with many layers capable of complex feature extraction.
+
+**Important Architectures:**
+
+* **CNN (Convolutional Neural Network):** Used in image processing.
+* **RNN (Recurrent Neural Network):** Used in sequence data like text.
+* **GAN (Generative Adversarial Network):** Used for content generation.
+
+**Example Application:** Face recognition, speech recognition.
+
+---
+
+## 4. LLMs & Transformer Architectures
+
+Large Language Models (LLMs) like GPT use billions of parameters to understand and generate human‑like text.
+
+**Transformers:** Architecture that uses attention mechanisms to understand context in data sequences.
+
+**Key Concepts:**
+
+* **Attention Mechanism:** Focuses on relevant parts of input.
+* **Tokenization:** Breaking text into small units.
+* **Pretraining:** Model learns from large datasets before fine‑tuning.
+
+**Examples of LLMs:** GPT‑4/5, BERT, LLaMA.
+
+---
+
+## 5. Transfer Learning & Fine‑Tuning
+
+Transfer Learning allows using a pretrained model on a new task.
+
+**Process:**
+
+1. Pretrain on large generic dataset
+2. Fine‑tune using smaller domain‑specific dataset
+
+**Benefits:**
+
+* Reduces training time
+* Requires less data
+* Achieves high accuracy
+
+**Example:** Fine‑tuning an LLM for legal or medical document summarization.
+
+---
+
+## 6. Data Science & Analytics
+
+Data Science involves extracting insights from structured and unstructured data.
+
+**Steps:** Data Collection → Preprocessing → Exploration → Modeling → Evaluation → Deployment
+
+**Tools:** Python, Pandas, NumPy, Tableau, SQL.
+
+**Example:** Predicting customer churn based on behavior.
+
+---
+
+## 7. Cyber Security Concepts
+
+Cyber Security protects systems and data from threats.
+
+**Types of Threats:** Malware, Phishing, Ransomware.
+**Security Techniques:** Encryption, Firewalls, Authentication.
+**Frameworks:** Zero‑Trust Security.
+
+**Example:** Using Multi‑Factor Authentication to secure accounts.
+
+---
+
+## 8. Blockchain & Web3
+
+Blockchain is a decentralized digital ledger.
+
+**Key Features:** Transparency, Immutability, Decentralization.
+
+**Cryptocurrency:** Digital asset using blockchain (e.g., Bitcoin, Ethereum).
+**Smart Contracts:** Self‑executing agreements.
+**Web3:** Internet powered by decentralized blockchain nodes instead of centralized servers.
+
+---
+
+## 9. Cloud & DevOps
+
+Cloud computing delivers scalable computing resources over the internet.
+
+**Popular Platforms:** AWS, Google Cloud, Microsoft Azure.
+
+**DevOps:** Combines software development and IT operations to automate workflows.
+
+**Key Tools:** Docker, Kubernetes, Jenkins.
+
+---
+
+## 10. New & Emerging Technologies
+
+* **Quantum Computing:** Uses qubits for ultra‑fast computation.
+* **Edge AI:** Runs AI models on devices locally instead of cloud.
+* **Genomics AI:** AI in DNA sequencing and personalized medicine.
+* **Digital Twins:** Virtual replica of real‑world systems.
+
+---
+
+---
+
+## Glossary of Key Terms (A-Z)
+
+**Algorithm:** A step-by-step procedure for solving a problem.
+**Artificial Intelligence (AI):** The ability of machines to mimic human cognitive functions.
+**Blockchain:** A decentralized ledger used to record transactions securely.
+**Cloud Computing:** Delivery of computing services over the internet.
+**Data Mining:** Extracting useful patterns from large data sets.
+**Deep Learning:** A subset of ML that uses neural networks with multiple layers.
+**Encryption:** Technique to convert data into a coded form to prevent unauthorized access.
+**Fine-Tuning:** Adapting a pretrained model to a new dataset.
+**Neural Network:** Computational model inspired by the brain's neuron structure.
+**Reinforcement Learning:** Learning through trial and error with rewards.
+**Smart Contract:** Self-executing program on a blockchain.
+**Tokenization:** Splitting text into smaller units for processing.
+**Transformer:** Neural network architecture used in LLMs.
+
+---
+
+## Interview Style Q&A
+
+**Q1: What is the difference between AI and Machine Learning?**
+**A:** AI is the broad field focused on creating intelligent systems, while ML is a subset that enables systems to learn patterns from data.
+
+**Q2: Why are neural networks effective in deep learning?**
+**A:** They can automatically learn hierarchical features from data, making them powerful for complex tasks like vision and language.
+
+**Q3: What makes blockchain secure?**
+**A:** Decentralization, encryption, and consensus mechanisms ensure that data is difficult to alter.
+
+**Q4: What is the role of attention in a Transformer model?**
+**A:** It allows the model to identify and prioritize important parts of input data.
+
+**Q5: Why is transfer learning useful?**
+**A:** It speeds up training and improves performance by reusing knowledge from a pretrained model.
+
+---
+
+End of Section.
+
+## 3. Neural Networks & Deep Learning (Expanded)
+
+Neural Networks are computational models inspired by the structure and function of biological neurons. They learn to map input data to outputs by adjusting internal parameters called **weights**.
+
+### 3.1 Neural Network Structure
+
+A neural network consists of layers:
+
+* **Input Layer:** Receives raw data.
+* **Hidden Layers:** Transform data through weighted operations and activation functions.
+* **Output Layer:** Produces final prediction.
+
+Data flows through the network in a **forward pass**:
+
+```
+Input → Linear Computation (Weights + Bias) → Activation → Next Layer → ... → Output
+```
+
+### 3.2 Activation Functions
+
+Activation functions introduce non-linearity, enabling the network to learn complex relationships.
+
+* **ReLU:** Common in deep networks. Outputs positive values, otherwise zero.
+* **Sigmoid:** Converts values to range (0,1). Used for binary classification.
+* **Tanh:** Zero-centered alternative to sigmoid.
+
+### 3.3 Learning Process (High-Level)
+
+Neural networks learn by comparing predictions with true labels and reducing the error.
+
+1. Forward pass generates prediction.
+2. Loss function measures difference from expected output.
+3. Backpropagation updates weights to reduce future errors.
+
+### 3.4 Convolutional Neural Networks (CNNs)
+
+Used for **image and video processing**.
+
+* Utilize **convolution filters** to detect visual patterns like edges, textures, and shapes.
+* Pooling layers reduce spatial size to retain key information while reducing computation.
+
+**Example Use Cases:**
+
+* Face recognition
+* Medical image diagnosis
+* Object detection in autonomous vehicles
+
+### 3.5 Recurrent Neural Networks (RNNs)
+
+Used for **sequential data** such as text, speech, or time-series.
+
+* Maintain internal memory of past inputs.
+
+Variants:
+
+* **LSTM (Long Short-Term Memory):** Handles long-term dependencies.
+* **GRU (Gated Recurrent Unit):** Simplified version of LSTM with similar performance.
+
+**Example Use Cases:**
+
+* Text generation
+* Speech recognition
+* Stock trend prediction
+
+### 3.6 Generative Models (GANs)
+
+Generative Adversarial Networks learn to generate data resembling training distributions.
+
+* **Generator:** Produces synthetic data.
+* **Discriminator:** Attempts to distinguish real vs fake.
+
+They train in competition to progressively improve output quality.
+
+**Example Use Cases:**
+
+* Deepfake image synthesis
+* AI art generation
+* Data augmentation
+
+### 3.7 Transformer Architecture (High-Level)
+
+Transformers process sequences using **attention mechanisms** instead of recurrence.
+
+* Compute relationships between all elements in a sequence simultaneously.
+* Basis for **LLMs (Large Language Models)**.
+
+**Benefits:**
+
+* Faster training
+* Handles long context effectively
+
+### 3.8 Deployment Considerations
+
+* **Model Size:** Affects memory and latency.
+* **Quantization/Pruning:** Reduces size while preserving accuracy.
+* **Hardware:** GPU/TPU acceleration improves performance.
+
+---
