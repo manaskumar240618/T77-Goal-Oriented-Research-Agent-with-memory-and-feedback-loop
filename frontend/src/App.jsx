@@ -105,7 +105,7 @@ function App() {
     setMessages(newMessages); setQuery(""); setLoading(true)
     
     try {
-      const result = await axios.post("http://127.0.0.1:8000/chat", { 
+      const result = await axios.post("https://intellica-backend.onrender.com/chat", { 
           query: textToSend,
           thread_id: threadId,
           critical_mode: isCriticalMode
@@ -145,7 +145,7 @@ function App() {
 
   const handleDownloadReport = async () => {
     try {
-        const response = await axios.post("http://127.0.0.1:8000/generate_report", { chat_history: messages }, { responseType: 'blob' });
+        const response = await axios.post("https://intellica-backend.onrender.com/generate_report", { chat_history: messages }, { responseType: 'blob' });
         const url = window.URL.createObjectURL(new Blob([response.data]));
         const link = document.createElement('a');
         link.href = url; link.setAttribute('download', 'Intellica_Report.pdf');
