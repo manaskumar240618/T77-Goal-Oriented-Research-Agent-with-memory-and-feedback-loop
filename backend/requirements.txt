@@ -9,3 +9,4 @@ tavily-python
 reportlab
 gunicorn
 langchain-google-genai
+langchain-community
