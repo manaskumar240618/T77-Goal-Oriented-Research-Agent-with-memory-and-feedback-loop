@@ -1,6 +1,10 @@
 fastapi
-uvicorn
-python-dotenv
+uvicorn[standard]
+python-multipart
+google-genai
 langchain
-langchain-community
-langchain-core
+langgraph
+pydantic
+tavily-python
+reportlab
+gunicorn
