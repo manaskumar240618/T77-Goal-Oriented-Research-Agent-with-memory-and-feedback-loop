@@ -1,6 +1,15 @@
 fastapi
-uvicorn
-python-dotenv
+uvicorn[standard]
+python-multipart
+
+Add your specific AI/Agentic libraries here
+
+google-genai
 langchain
-langchain-community
-langchain-core
+langgraph
+pydantic
+tavily-python
+reportlab
+gunicorn
+
+Add any other libraries used in your project
